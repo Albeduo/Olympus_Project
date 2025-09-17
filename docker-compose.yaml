@@ -3,7 +3,7 @@ services:
     build: ./php
     container_name: php_compose
     volumes:
-      - ./Olympus:/var/www/html
+      - ./php:/var/www/html
     ports:
       - "8000:8000"
     networks:

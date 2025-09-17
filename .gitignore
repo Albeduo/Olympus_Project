@@ -1,0 +1,4 @@
+mysql/data/*
+
+!mysql/data/Olympus/
+!mysql/data/Olympus/**
