@@ -1,0 +1,76 @@
+1 – Plataforma de gestão administrativa
+
+Plataforma Web para gestão de pessoas dentro da empresa. 
+
+Requisitos:
+
+- Painel administrativo seguro com autenticação de usuário.
+Login Padrão para checagem dos dados do funcionário.
+Login ADM para gerenciamento de Funcionarios
+
+- Cadastro, edição e exclusão de perfis de pessoas.
+Cadastro de Funcionarios dentro da área logada do perfil ADM
+
+- Upload de fotos para cada perfil.
+Possível nos dois tipos de Login.
+Utilizar Drag&Drop para a foto de perfil
+
+- Geração automática de QR Codes.
+
+
+- Opções para ativar ou desativar perfis de pessoas.
+Somente Perfil Administrativo.
+
+
+----
+
+Banco de Dados
+
+Funcionario
+
+•	Nome VARCHAR 64 NOT NULL
+•	ID INT(12) NOT NULL PRIMARY KEY AUTO_INCRMENT
+•	Nascimento DATE NOT NULL
+•	CPF VARCHAR(11) NOT NULL
+•	SEXO SMALLINT NOT NULL
+•	FT_Perfil VARCHAR(64) 
+•	Ativo SmallInt NOT NULL
+•	Chave_PIX VARCHAR(64) NOT NULL
+•	Cargo VARCHAR(64) NOT NULL
+
+Contato
+
+•	ID Int NOT NULL PRIMARY KEY AUTO_INCRMENT
+•	ID_Pessoa INT FOREIGN_KEY NOT NULL
+•	Tipo CHAR(E,T) NOT NULL
+•	Whtasapp SmallInt Default 0
+
+QRCode
+
+•	Code ____ NOT NULL PRIMARY KEY
+•	ID_Pessoa INT FOREIGN KEY NOT NULL
+
+Usuários
+
+•	User VARCHAR(32) NOT NULL
+•	ADM SmallINT NOT NULL
+•	ID INT NOT NULL PRIMARY KEY AUTO_INCRMENT
+•	Password VARCHAR(32) NOT NULL 
+•	ID_Funcionario INT NOT NULL FOREIGN_KEY
+
+Tecnologias
+
+Front-End
+•	HTML
+•	CSS
+•	JavaScript
+
+Back-End
+•	MYSQL
+•	PHP
+
+Infra
+
+Rodar com Docker Compose
+Versionar com Git
+

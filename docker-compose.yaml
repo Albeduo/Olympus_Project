@@ -1,0 +1,26 @@
+services:
+  php:
+    build: ./php
+    container_name: php_compose
+    volumes:
+      - ./Olympus:/var/www/html
+    ports:
+      - "8000:8000"
+    networks:
+      - minha_rede
+    restart: always
+  mysql:
+    build: ./mysql
+    container_name: mysql_compose
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - C:\Users\samue\OneDrive\Documentos\Projetos\Olympus_Project\mysql\data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - minha_rede
+
+networks:
+  minha_rede:
+    driver: bridge
